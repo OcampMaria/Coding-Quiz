@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Coding Quizzz</title>
     <link rel="stylesheet" href="./Deploy/style.css">
+    <link rel="stylesheet" href="index2.html">
+    <script defer src="script.js"></script>
    
 </head>
 <body>
@@ -18,11 +20,40 @@
     </header>
 
 
+    <!-- This is the info Box with instructions for the quiz -->
+    <section class="infoBox">
+        <div class="infoTitle">
+            <span>
+                <h3>Sone rules of this quiz include:</h3>  
+                <p> The timer will start when the "Start Quiz" button is pressed. Yu will be presented with the first question right after. Once you select an answer, you will be directed to the next question until the end of the quiz. 
+                <p>If you anwswer a question incorrectly, then the time will be substracted from the clock.</p>
+                <p>The quiz will end when all questions are answered or the timer reaches 0</p>
+                <p>After the quiz is completed, you can save your score by typing your initials next to the score.</p>
+            </span>
+        </div>
+    </section>
 
-    <main id="quiz"></main>
-    <button id="submit">Submit Quiz</button>
-    <section id="results">Results</section>
+    
+    <!-- this is the start button to start the quiz-->
+    <section class="startBtn">
+        <button class="start">Start Quiz</button>
+    </section>
 
+    <main class="container">
+        <section id="questionContainer" class="hide">
+            <div id="question">Question</div>
+            <div id="answerBtns" class="btn-grid">
+                <button class="btn">A</button>
+                <button class="btn">B</button>
+                <button class="btn">C</button>
+                <button class="btn">D</button>
+            </div>
+        </section>
+    </main>
+
+    
+
+    
     <script src="./Deploy/script.js"></script>
 </body>
 </html>
