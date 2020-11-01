@@ -22,13 +22,28 @@ function setTime() {
 }
 setTime();
 
+
+
+
+var questions = [{
+    question: "What is JavaScript",
+    answers: [
+        { text: "A programing language", correct: true },
+        { text: "A type of animal", correct: false },
+        { text: "A Cellphone brand" }
+    ]
+}]
+
+
 var shuffledQuestions, currentQuestionsIndex
-console.log();
-// added an event listener to the start quiz button to run the function when clicked. 
+    // added an event listener to the start quiz button to run the function when clicked. 
 startButton.addEventListener("click", startQuiz)
+
 
 function startQuiz() {
     console.log("started");
+    startButton.classList.add("hide");
+    questionContainerEl.classList.remove("hide");
 
     shuffledQuestions = questions.sort(() => Math.random() - .5)
     currentQuestionsIndex = 0
@@ -38,16 +53,16 @@ function startQuiz() {
 
 
     // make the directions and the start quiz button dissaoear after clicked. 
-    if (start.getElementsByClassName.display === "none") {
-        start.style.display = "block";
-    } else {
-        start.style.display = "none";
-    }
-    if (direction.getElementsByClassName.display === "none") {
-        direction.style.display = "block";
-    } else {
-        direction.style.display = "none";
-    }
+    // if (start.getElementsByClassName.display === "none") {
+    //     start.style.display = "block";
+    // } else {
+    //     start.style.display = "none";
+    // }
+    // if (direction.getElementsByClassName.display === "none") {
+    //     direction.style.display = "block";
+    // } else {
+    //     direction.style.display = "none";
+    // }
 
     setNextQuestion()
 }
@@ -56,21 +71,14 @@ function startQuiz() {
 function setNextQuestion() {
     showQuestion(shuffledQuestions[currentQuestionsIndex])
 
+
 }
 
 function showQuestion(question) {
+
 
 }
 
 function selectAnswer() {
 
 }
-
-
-var questions = [{
-    question: "What is JavaScript",
-    answers: [
-        { text: "A programing language", correct: true },
-        { text: "A type of animal", correct: false }
-    ]
-}];
