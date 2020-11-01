@@ -1,14 +1,9 @@
 var timeEl = document.querySelector(".time");
-var quizEl = document.querySelector("#time");
-var submitBtn = document.querySelector("#submit");
-var results = document.querySelector("#results");
+var startButton = document.querySelector(".start");
 
-
+// starting time number. Timer will coundown starting at 75
 var secondsLeft = 75;
-
-
-
-
+//created the function to create the countdown timer
 function setTime() {
     var timerInterval = setInterval(function() {
       secondsLeft--;
@@ -23,3 +18,8 @@ function setTime() {
   }
   setTime();
   
+// added an event listener to the start quiz button to run the function when clicked. 
+startButton.addEventListener("click", startQuiz)
+function startQuiz (){
+  console.log("started")
+}
