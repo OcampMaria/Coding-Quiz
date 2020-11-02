@@ -46,7 +46,7 @@ p {
 
 #questionContainer {
     background-color: rgb(190, 212, 205);
- 
+    font-weight: bold;
     height: 350px;
     padding: 12px 16px;
     font-size: 20px;
@@ -64,8 +64,13 @@ p {
     display: block;
     margin: 20px;
     padding: 5px 10px;
+    padding: 20px 15px;
+    font-size: medium;
+    font-weight: lighter;
+    border-radius: 5px;
+    border: slategray;
+    margin: 10px;
 }
-
 
 
 
@@ -79,12 +84,19 @@ p {
     background-color: lightskyblue;
     padding: 20px 15px;
     font-size: medium;
-    font-weight: bold;
-    border-radius: 5px;
-    border: slategray;
+    
     margin: 10px;
 }
+
 
 .hide {
     display: none;
 }
+
+.site-footer{
+    position:fixed;
+    bottom:0px;
+    left:0px;
+    right:0px;
+    width:100%;
+   }
