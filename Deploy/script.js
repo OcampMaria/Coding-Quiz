@@ -44,10 +44,10 @@ var questions = [
     {
         question: "Inside which HTML element do we put the JavaScript?",
         answers: [
-            { text: "<js>", correct: false },
-            { text: "<scripture>", correct: false },
-            { text: "<script>", correct: true },
-            {text: "<java>", correct: false},
+            { text: " inside the 'js' element", correct: false },
+            { text: "inside the 'scripture' element", correct: false },
+            { text: "inside 'script' element", correct: true },
+            {text: "inside 'java' element", correct: false},
         ]
     }, 
     {
@@ -62,9 +62,9 @@ var questions = [
     {
         question: "Where in an HTML document is the correct place to refer to an external style sheet?",
         answers: [
-            { text: "in the <header> section", correct: false },
-            { text: "in the <head> section", correct: true },
-            { text: "in the <body> section", correct: false },
+            { text: "in the 'header' section", correct: false },
+            { text: "in the 'head' section", correct: true },
+            { text: "in the 'body' section", correct: false },
             {text: "At the end of the document", correct: false},
         ]
     }, 

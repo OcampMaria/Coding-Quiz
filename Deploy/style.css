@@ -33,7 +33,7 @@ p {
 
 
 .infoBox {
-    display: flex;
+  
     justify-content: center;
     align-items: center;
     height: 350px;
@@ -45,20 +45,31 @@ p {
 }
 
 #questionContainer {
+    background-color: rgb(190, 212, 205);
  
-    height: 250px;
-    padding: 5px 5px;
+    height: 350px;
+    padding: 12px 16px;
     font-size: 20px;
     overflow: hidden;
-    margin-top: 100px;
-    margin-left: 200px;
-    margin-right: 200px;
-    background-color: mediumaquamarine;
-    border-radius: 5px;
+    margin: 15px;
 }
 
+.btn-grid {
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.btn {
+    border: 1px solid;
+    display: block;
+    margin: 20px;
+    padding: 5px 10px;
+}
+
+
+
+
 #startBtn {
-   
     display: flex;
     justify-content: center;
     align-items: center;
@@ -73,22 +84,6 @@ p {
     border: slategray;
     margin: 10px;
 }
-
-.btn-grid {
-    grid-template-columns: repeat(2,auto);
-    gap: 10px;
-    margin: 20px 0;
-   
-}
-
-.btn {
-    display: block;
-    width: 30px;
-    margin: 10px;
-    padding: 0;
-  
-}
-
 
 .hide {
     display: none;
