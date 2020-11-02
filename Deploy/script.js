@@ -31,7 +31,7 @@ setTime();
 
 
 var questions = [{
-    question: "What is JavaScript",
+    question: "What is JavaScript?",
     answers: [
         { text: "A programing language", correct: true },
         { text: "A type of animal", correct: false },
@@ -49,24 +49,42 @@ function startQuiz() {
     console.log("started");
     startButton.classList.add("hide")
     infoBox.classList.add("hide")
+    shuffledQuestions = questions.sort(() => 0.5 - Math.random());
+    currentQuestionsIndex = 0
     questionContainerEl.classList.remove("hide")
 
-     
-   
+    console.log(shuffledQuestions[0]);
     setNextQuestion()
 }
 
 
 function setNextQuestion() {
-    
+    resetState()
+    showQuestion(shuffledQuestions[currentQuestionsIndex])
 
 }
 
 function showQuestion(question) {
-
-
+    questionEl.innerHTML = question.question
+    question.answers.forEach(answer => {
+        var button = document.createElement("button")
+        button.innerHTML = answer.text
+        button.classList.add("btn")
+        if (answer.correct){
+            button.dataset.correct = answer.correct
+        }
+        button.addEventListener("click", selectAnswer)
+        answerBtnEl.appendChild(button)
+    });
 }
 
-function selectAnswer() {
+function resetState() {
+    while(answerBtnEl.firstChild) {
+        answerBtnEl.removeChild
+        (answerBtnEl.firstChild)
+    }
+}
+
+function selectAnswer(e) {
 
 }
