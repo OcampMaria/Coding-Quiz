@@ -7,6 +7,7 @@ var infoBox = document.querySelector(".infoBox");
 var shuffledQuestions, currentQuestionsIndex;
 
 
+
 console.log(shuffledQuestions, currentQuestionsIndex);
 
 
@@ -44,6 +45,10 @@ var questions = [{
 
     // added an event listener to the start quiz button to run the function when clicked. 
 startButton.addEventListener("click", startQuiz)
+answerBtnEl.addEventListener("click", () => {
+    currentQuestionsIndex++
+    setNextQuestion ()
+})
 
 function startQuiz() {
     console.log("started");
@@ -65,16 +70,16 @@ function setNextQuestion() {
 }
 
 function showQuestion(question) {
-    questionEl.innerHTML = question.question
+    questionEl.innerHTML = question.question;
     question.answers.forEach(answer => {
-        var button = document.createElement("button")
-        button.innerHTML = answer.text
-        button.classList.add("btn")
+        var button = document.createElement("button");
+        button.innerHTML = answer.text;
+        button.classList.add("btn");
         if (answer.correct){
             button.dataset.correct = answer.correct
-        }
+        };
         button.addEventListener("click", selectAnswer)
-        answerBtnEl.appendChild(button)
+        answerBtnEl.appendChild(button);
     });
 }
 
@@ -86,5 +91,27 @@ function resetState() {
 }
 
 function selectAnswer(e) {
+    var selectedBtn = e.target
+    var correct = selectedBtn.dataset.correct;
+    setStatusClass(document.body, correct)
+    Array.from(answerBtnEl.children).forEach(button => {
+        setStatusClass(button, button.dataset.correct)
+    })
+    if (shuffledQuestions.length > currentQuestionsIndex +1) {
+        
+    }
+}
 
+function setStatusClass(element, correct) {
+    clearStatusClass(element)
+    if (correct) {
+        element.classList.add("correct")
+    } else {
+        element.classList.add("wrong")
+    }
+}
+
+function clearStatusClass(element) {
+    element.classList.remove ("correct");
+    element.classList.remove ("wrong");
 }
