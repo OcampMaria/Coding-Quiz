@@ -31,15 +31,55 @@ setTime();
 
 
 
-var questions = [{
-    question: "What is JavaScript?",
-    answers: [
-        { text: "A programing language", correct: true },
-        { text: "A type of animal", correct: false },
-        { text: "A Cellphone brand", correct: false },
-        {text: "A computer", correct: false},
+var questions = [
+    {
+        question: "What is JavaScript?",
+        answers: [
+            { text: "A programing language", correct: true },
+            { text: "A type of animal", correct: false },
+            { text: "A Cellphone brand", correct: false },
+            {text: "A computer", correct: false},
+        ]
+    }, 
+    {
+        question: "Inside which HTML element do we put the JavaScript?",
+        answers: [
+            { text: "<js>", correct: false },
+            { text: "<scripture>", correct: false },
+            { text: "<script>", correct: true },
+            {text: "<java>", correct: false},
+        ]
+    }, 
+    {
+        question: "What does HTML stand for?",
+        answers: [
+            { text: "Hyper Text Market Link", correct: false },
+            { text: "Home Tools Maker Language", correct: false },
+            { text: "home Text maker language", correct: false },
+            {text: "Hyper Text Markup Language", correct: true},
+        ]
+    }, 
+    {
+        question: "Where in an HTML document is the correct place to refer to an external style sheet?",
+        answers: [
+            { text: "in the <header> section", correct: false },
+            { text: "in the <head> section", correct: true },
+            { text: "in the <body> section", correct: false },
+            {text: "At the end of the document", correct: false},
+        ]
+    }, 
+    {
+        question: "Which sign does jQuery use as a shortcut for jQuery?",
+        answers: [
+            { text: "the % sign", correct: false },
+            { text: "the $ sign", correct: true },
+            { text: "the ! sign", correct: false },
+            {text: "the # sign", correct: false},
+        ]
+    }
+    
     ]
-}]
+
 
 
 
@@ -51,7 +91,6 @@ answerBtnEl.addEventListener("click", () => {
 })
 
 function startQuiz() {
-    console.log("started");
     startButton.classList.add("hide")
     infoBox.classList.add("hide")
     shuffledQuestions = questions.sort(() => 0.5 - Math.random());
@@ -66,7 +105,7 @@ function startQuiz() {
 function setNextQuestion() {
     resetState()
     showQuestion(shuffledQuestions[currentQuestionsIndex])
-
+    
 }
 
 function showQuestion(question) {
@@ -94,12 +133,8 @@ function selectAnswer(e) {
     var selectedBtn = e.target
     var correct = selectedBtn.dataset.correct;
     setStatusClass(document.body, correct)
-    Array.from(answerBtnEl.children).forEach(button => {
-        setStatusClass(button, button.dataset.correct)
-    })
-    if (shuffledQuestions.length > currentQuestionsIndex +1) {
-        
-    }
+   
+  
 }
 
 function setStatusClass(element, correct) {
