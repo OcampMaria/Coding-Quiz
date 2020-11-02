@@ -1,8 +1,13 @@
 var timeEl = document.querySelector(".time");
-var startButton = document.querySelector(".start");
-var questionContainerEl = document.querySelector(".questionContainer");
-var questionEl = document.querySelector(".question");
-var answerBtnEl = document.querySelector(".answerBtns");
+var startButton = document.querySelector(".controls");
+var questionContainerEl = document.querySelector("#questionContainer");
+var questionEl = document.querySelector("#question");
+var answerBtnEl = document.querySelector("#answer-buttons");
+var infoBox = document.querySelector(".infoBox");
+var shuffledQuestions, currentQuestionsIndex;
+
+
+console.log(shuffledQuestions, currentQuestionsIndex);
 
 
 // starting time number. Timer will coundown starting at 75
@@ -30,47 +35,30 @@ var questions = [{
     answers: [
         { text: "A programing language", correct: true },
         { text: "A type of animal", correct: false },
-        { text: "A Cellphone brand" }
+        { text: "A Cellphone brand", correct: false },
+        {text: "A computer", correct: false},
     ]
 }]
 
 
-var shuffledQuestions, currentQuestionsIndex
+
     // added an event listener to the start quiz button to run the function when clicked. 
 startButton.addEventListener("click", startQuiz)
 
-
 function startQuiz() {
     console.log("started");
-    startButton.classList.add("hide");
-    questionContainerEl.classList.remove("hide");
+    startButton.classList.add("hide")
+    infoBox.classList.add("hide")
+    questionContainerEl.classList.remove("hide")
 
-    shuffledQuestions = questions.sort(() => Math.random() - .5)
-    currentQuestionsIndex = 0
-        // created the variables locally to make the elements dissapear after clicked. 
-    var start = document.querySelector(".start");
-    var direction = document.querySelector(".infoBox")
-
-
-    // make the directions and the start quiz button dissaoear after clicked. 
-    // if (start.getElementsByClassName.display === "none") {
-    //     start.style.display = "block";
-    // } else {
-    //     start.style.display = "none";
-    // }
-    // if (direction.getElementsByClassName.display === "none") {
-    //     direction.style.display = "block";
-    // } else {
-    //     direction.style.display = "none";
-    // }
-
+     
+   
     setNextQuestion()
 }
 
 
 function setNextQuestion() {
-    showQuestion(shuffledQuestions[currentQuestionsIndex])
-
+    
 
 }
 
