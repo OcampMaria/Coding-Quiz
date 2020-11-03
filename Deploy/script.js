@@ -155,21 +155,21 @@ function selectedAnswer(e) {
     var selectedBtn = e.target
     var correct = selectedBtn.dataset.correct;
     setStatusClass(document.body, correct)
-    Array.from(answerBtnEl.children).forEach(button => {
-        setStatusClass(button, button.dataset.correct)
-    })
+   
 }
 
 function setStatusClass(element, correct) {
     clearStatusClass (element)
     if (correct){
         correctAns.classList.remove("hide")
+        wrongAns.classList.add("hide")
     } else {
         wrongAns.classList.remove("hide")
+        correctAns.classList.add("hide")
     }
 }
 
 function clearStatusClass (element) {
     correctAns.classList.add("hide")
-    wrongAns.classList.add("hide")
+    correctAns.classList.add("hide")
 }
