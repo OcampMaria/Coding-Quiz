@@ -4,6 +4,12 @@ var questionContainerEl = document.querySelector("#questionContainer");
 var questionEl = document.querySelector("#question");
 var answerBtnEl = document.querySelector("#answer-buttons");
 var infoBox = document.querySelector(".infoBox");
+var Submit = document.querySelector("#submit");
+var goBack = document.querySelector("#goBack");
+var clear = document.querySelector("#clear");
+var finalScore = document.querySelector(".finalScore");
+var correct = document.querySelector("#footer1");
+var wrong = document.querySelector("#footer2");
 var shuffledQuestions, currentQuestionsIndex;
 
 

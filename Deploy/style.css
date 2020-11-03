@@ -63,8 +63,7 @@ p {
     border: 1px solid;
     display: block;
     margin: 20px;
-    padding: 5px 10px;
-    padding: 20px 15px;
+    padding: 15px 10px;
     font-size: medium;
     font-weight: lighter;
     border-radius: 5px;
@@ -95,8 +94,9 @@ p {
 
 .site-footer{
     position:fixed;
-    bottom:0px;
-    left:0px;
+    font-style: italic;
+    bottom:300px;
+    left:30px;
     right:0px;
     width:100%;
    }
