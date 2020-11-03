@@ -8,8 +8,8 @@ var Submit = document.querySelector("#submit");
 var goBack = document.querySelector("#goBack");
 var clear = document.querySelector("#clear");
 var finalScore = document.querySelector(".finalScore");
-var correct = document.querySelector("#footer1");
-var wrong = document.querySelector("#footer2");
+var correctAns = document.querySelector("#footer1");
+var wrongAns = document.querySelector("#footer2");
 var shuffledQuestions, currentQuestionsIndex;
 
 
@@ -41,50 +41,51 @@ var questions = [
     {
         question: "What is JavaScript?",
         answers: [
-            { text: "A programing language", correct: true },
-            { text: "A type of animal", correct: false },
-            { text: "A Cellphone brand", correct: false },
-            {text: "A computer", correct: false},
+            { text: "1. A programing language", correct: true },
+            { text: "2. A type of animal", correct: false },
+            { text: "3. A Cellphone brand", correct: false },
+            {text: "4. A computer", correct: false},
         ]
     }, 
     {
         question: "Inside which HTML element do we put the JavaScript?",
         answers: [
-            { text: " inside the 'js' element", correct: false },
-            { text: "inside the 'scripture' element", correct: false },
-            { text: "inside 'script' element", correct: true },
-            {text: "inside 'java' element", correct: false},
+            { text: "1. Inside the 'js' element", correct: false },
+            { text: "2. Inside the 'scripture' element", correct: false },
+            { text: "3. Inside 'script' element", correct: true },
+            {text: "4. Inside 'java' element", correct: false},
         ]
     }, 
     {
         question: "What does HTML stand for?",
         answers: [
-            { text: "Hyper Text Market Link", correct: false },
-            { text: "Home Tools Maker Language", correct: false },
-            { text: "home Text maker language", correct: false },
-            {text: "Hyper Text Markup Language", correct: true},
+            { text: "1. Hyper Text Market Link", correct: false },
+            { text: "2. Home Tools Maker Language", correct: false },
+            { text: "3. home Text maker language", correct: false },
+            {text: "4. Hyper Text Markup Language", correct: true},
         ]
     }, 
     {
         question: "Where in an HTML document is the correct place to refer to an external style sheet?",
         answers: [
-            { text: "in the 'header' section", correct: false },
-            { text: "in the 'head' section", correct: true },
-            { text: "in the 'body' section", correct: false },
-            {text: "At the end of the document", correct: false},
+            { text: "1. In the 'header' section", correct: false },
+            { text: "2. In the 'head' section", correct: true },
+            { text: "3. In the 'body' section", correct: false },
+            {text: "4. At the end of the document", correct: false},
         ]
     }, 
     {
         question: "Which sign does jQuery use as a shortcut for jQuery?",
         answers: [
-            { text: "the % sign", correct: false },
-            { text: "the $ sign", correct: true },
-            { text: "the ! sign", correct: false },
-            {text: "the # sign", correct: false},
+            { text: "1. The % sign", correct: false },
+            { text: "2. The $ sign", correct: true },
+            { text: "3. The ! sign", correct: false },
+            {text: "4. The # sign", correct: false},
         ]
     }
     
     ]
+
 
 
 
@@ -122,6 +123,7 @@ function showQuestion(question) {
         button.classList.add("btn");
         if (answer.correct){
             button.dataset.correct = answer.correct
+
         };
         button.addEventListener("click", selectAnswer)
         answerBtnEl.appendChild(button);
@@ -138,9 +140,7 @@ function resetState() {
 function selectAnswer(e) {
     var selectedBtn = e.target
     var correct = selectedBtn.dataset.correct;
-    setStatusClass(document.body, correct)
    
-  
 }
 
 function setStatusClass(element, correct) {
