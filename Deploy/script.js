@@ -7,7 +7,7 @@ var infoBox = document.querySelector(".infoBox");
 var Submit = document.querySelector("#submit");
 var goBack = document.querySelector("#goBack");
 var clear = document.querySelector("#clear");
-var finalScore = document.querySelector(".finalScore");
+
 var correctAns = document.querySelector("#footer1");
 var wrongAns = document.querySelector("#footer2");
 var shuffledQuestions, currentQuestionsIndex;
@@ -32,6 +32,14 @@ function setTime() {
 
     }, 1000);
 }
+
+function sendMessage() {
+    timeEl.textContent = " ";
+    var finalScore = document.querySelector(".finalScore");
+    finalScore.classList.remove("hide");
+    questionContainerEl.classList.add("hide")
+  }
+
 setTime();
 
 
@@ -143,16 +151,3 @@ function selectAnswer(e) {
    
 }
 
-function setStatusClass(element, correct) {
-    clearStatusClass(element)
-    if (correct) {
-        element.classList.add("correct")
-    } else {
-        element.classList.add("wrong")
-    }
-}
-
-function clearStatusClass(element) {
-    element.classList.remove ("correct");
-    element.classList.remove ("wrong");
-}
