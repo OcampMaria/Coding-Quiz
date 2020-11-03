@@ -12,35 +12,7 @@ var correctAns = document.querySelector("#footer1");
 var wrongAns = document.querySelector("#footer2");
 var shuffledQuestions, currentQuestionsIndex;
 
-
-
 console.log(shuffledQuestions, currentQuestionsIndex);
-
-
-// starting time number. Timer will coundown starting at 75
-var secondsLeft = 75;
-//created the function to create the countdown timer
-function setTime() {
-    var timerInterval = setInterval(function() {
-        secondsLeft--;
-        timeEl.textContent = "Time: " + secondsLeft;
-
-        if (secondsLeft === 0) {
-            clearInterval(timerInterval);
-            sendMessage()
-        }
-
-    }, 1000);
-}
-
-function sendMessage() {
-    timeEl.textContent = " ";
-    var finalScore = document.querySelector(".finalScore");
-    finalScore.classList.remove("hide");
-    questionContainerEl.classList.add("hide")
-  }
-
-setTime();
 
 
 
@@ -90,15 +62,14 @@ var questions = [
             { text: "3. The ! sign", correct: false },
             {text: "4. The # sign", correct: false},
         ]
-    }
-    
-    ]
+    }  
+]
 
 
 
 
 
-    // added an event listener to the start quiz button to run the function when clicked. 
+// added an event listener to the start quiz button to run the function when clicked. 
 startButton.addEventListener("click", startQuiz)
 answerBtnEl.addEventListener("click", () => {
     currentQuestionsIndex++
@@ -114,6 +85,33 @@ function startQuiz() {
 
     console.log(shuffledQuestions[0]);
     setNextQuestion()
+
+    
+    // starting time number. Timer will coundown starting at 75
+    var secondsLeft = 75;
+    //created the function to create the countdown timer
+    function setTime() {
+        var timerInterval = setInterval(function() {
+            secondsLeft--;
+            timeEl.textContent = "Time: " + secondsLeft;
+
+            if (secondsLeft === 0) {
+                clearInterval(timerInterval);
+            
+                sendMessage()
+            }
+            
+    }, 1000);
+    }
+
+    function sendMessage() {
+        timeEl.textContent = " ";
+        var finalScore = document.querySelector(".finalScore");
+        finalScore.classList.remove("hide");
+        questionContainerEl.classList.add("hide")
+    }
+
+    setTime();
 }
 
 
@@ -150,4 +148,3 @@ function selectAnswer(e) {
     var correct = selectedBtn.dataset.correct;
    
 }
-
