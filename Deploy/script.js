@@ -3,6 +3,7 @@ var startButton = document.querySelector(".controls");
 var questionContainerEl = document.querySelector("#questionContainer");
 var questionEl = document.querySelector("#question");
 var answerBtnEl = document.querySelector("#answer-buttons");
+var AnsBtn = document.querySelector(".AnsBtn")
 var infoBox = document.querySelector(".infoBox");
 var Submit = document.querySelector("#submit");
 var goBack = document.querySelector("#goBack");
@@ -11,8 +12,6 @@ var clear = document.querySelector("#clear");
 var correctAns = document.querySelector("#footer1");
 var wrongAns = document.querySelector("#footer2");
 var shuffledQuestions, currentQuestionsIndex;
-
-console.log(shuffledQuestions, currentQuestionsIndex);
 
 
 
@@ -71,10 +70,8 @@ var questions = [
 
 // added an event listener to the start quiz button to run the function when clicked. 
 startButton.addEventListener("click", startQuiz)
-answerBtnEl.addEventListener("click", () => {
-    currentQuestionsIndex++
-    setNextQuestion ()
-})
+
+
 
 function startQuiz() {
     startButton.classList.add("hide")
@@ -112,39 +109,67 @@ function startQuiz() {
     }
 
     setTime();
+
+    
+    answerBtnEl.addEventListener("click", function(event) {
+        event.stopPropagation();
+        currentQuestionsIndex++
+        if (answerBtnEl.click) {
+            setNextQuestion ()
+            console.log("clicked answer");
+        }
+        
+    })
 }
 
 
 function setNextQuestion() {
+    function showQuestion(question) {
+        questionEl.innerHTML = question.question;
+        question.answers.forEach(answer => {
+            var button = document.createElement("button");
+            button.innerHTML = answer.text;
+            button.classList.add("btn");
+            if (answer.correct){
+                button.dataset.correct = answer.correct
+    
+            };
+    
+            button.addEventListener("click", selectedAnswer)
+            answerBtnEl.appendChild(button);
+        });
+    }
+    
     resetState()
     showQuestion(shuffledQuestions[currentQuestionsIndex])
     
+    function resetState() {
+        while(answerBtnEl.firstChild) {
+            answerBtnEl.removeChild
+            (answerBtnEl.firstChild)
+        }
+}
 }
 
-function showQuestion(question) {
-    questionEl.innerHTML = question.question;
-    question.answers.forEach(answer => {
-        var button = document.createElement("button");
-        button.innerHTML = answer.text;
-        button.classList.add("btn");
-        if (answer.correct){
-            button.dataset.correct = answer.correct
-
-        };
-        button.addEventListener("click", selectAnswer)
-        answerBtnEl.appendChild(button);
-    });
+function selectedAnswer(e) {
+    var selectedBtn = e.target
+    var correct = selectedBtn.dataset.correct;
+    setStatusClass(document.body, correct)
+    Array.from(answerBtnEl.children).forEach(button => {
+        setStatusClass(button, button.dataset.correct)
+    })
 }
 
-function resetState() {
-    while(answerBtnEl.firstChild) {
-        answerBtnEl.removeChild
-        (answerBtnEl.firstChild)
+function setStatusClass(element, correct) {
+    clearStatusClass (element)
+    if (correct){
+        correctAns.classList.remove("hide")
+    } else {
+        wrongAns.classList.remove("hide")
     }
 }
 
-function selectAnswer(e) {
-    var selectedBtn = e.target
-    var correct = selectedBtn.dataset.correct;
-   
+function clearStatusClass (element) {
+    correctAns.classList.add("hide")
+    wrongAns.classList.add("hide")
 }
