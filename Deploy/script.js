@@ -8,7 +8,6 @@ var infoBox = document.querySelector(".infoBox");
 var Submit = document.querySelector("#submit");
 var goBack = document.querySelector("#goBack");
 var clear = document.querySelector("#clear");
-
 var correctAns = document.querySelector("#footer1");
 var wrongAns = document.querySelector("#footer2");
 var shuffledQuestions, currentQuestionsIndex;
@@ -83,6 +82,8 @@ function startQuiz() {
     console.log(shuffledQuestions[0]);
     setNextQuestion()
 
+
+    
     
     // starting time number. Timer will coundown starting at 75
     var secondsLeft = 75;
@@ -90,6 +91,7 @@ function startQuiz() {
     function setTime() {
         var timerInterval = setInterval(function() {
             secondsLeft--;
+          
             timeEl.textContent = "Time: " + secondsLeft;
 
             if (secondsLeft === 0) {
@@ -138,6 +140,10 @@ function setNextQuestion() {
             button.addEventListener("click", selectedAnswer)
             answerBtnEl.appendChild(button);
         });
+
+        function lastQuestion (){
+
+        }
     }
     
     resetState()
