@@ -78,20 +78,16 @@ function startQuiz() {
     shuffledQuestions = questions.sort(() => 0.5 - Math.random());
     currentQuestionsIndex = 0
     questionContainerEl.classList.remove("hide")
+console.log(shuffledQuestions[0]);
 
-    console.log(shuffledQuestions[0]);
     setNextQuestion()
 
-
-    
-    
     // starting time number. Timer will coundown starting at 75
-    var secondsLeft = 75;
+    var secondsLeft = 2;
     //created the function to create the countdown timer
     function setTime() {
         var timerInterval = setInterval(function() {
             secondsLeft--;
-          
             timeEl.textContent = "Time: " + secondsLeft;
 
             if (secondsLeft === 0) {
@@ -108,7 +104,19 @@ function startQuiz() {
         var finalScore = document.querySelector(".finalScore");
         finalScore.classList.remove("hide");
         questionContainerEl.classList.add("hide")
+        document.querySelector("#submit").classList.remove("hide")
+        document.querySelector("#submit").addEventListener("click", displayNextButtons)
+        
     }
+
+    function displayNextButtons (){
+        var intialsInput = document.querySelector("#initials")
+        localStorage.setItem("initials", initialsInput);
+        document.querySelector("#clear").addEventListener("click", clear)
+
+    }
+
+   
 
     setTime();
 
@@ -134,16 +142,18 @@ function setNextQuestion() {
             button.classList.add("btn");
             if (answer.correct){
                 button.dataset.correct = answer.correct
-    
             };
     
             button.addEventListener("click", selectedAnswer)
             answerBtnEl.appendChild(button);
         });
-
-        function lastQuestion (){
-
-        }
+    }
+    
+    function selectedAnswer(e) {
+        var selectedBtn = e.target
+        var correct = selectedBtn.dataset.correct;
+        setStatusClass(document.body, correct)
+       
     }
     
     resetState()
@@ -154,24 +164,21 @@ function setNextQuestion() {
             answerBtnEl.removeChild
             (answerBtnEl.firstChild)
         }
-}
-}
+}}
 
-function selectedAnswer(e) {
-    var selectedBtn = e.target
-    var correct = selectedBtn.dataset.correct;
-    setStatusClass(document.body, correct)
-   
-}
+
 
 function setStatusClass(element, correct) {
     clearStatusClass (element)
+
     if (correct){
         correctAns.classList.remove("hide")
         wrongAns.classList.add("hide")
+        
     } else {
         wrongAns.classList.remove("hide")
         correctAns.classList.add("hide")
+        
     }
 }
 
