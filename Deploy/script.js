@@ -83,7 +83,7 @@ function startQuiz() {
     setNextQuestion()
 
     // starting time number. Timer will coundown starting at 75
-    var secondsLeft = 2;
+    var secondsLeft = 37;
     //created the function to create the countdown timer
     function setTime() {
         var timerInterval = setInterval(function() {
