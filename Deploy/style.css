@@ -74,7 +74,7 @@ p {
 
 
 
-#startBtn {
+.startBtn {
     display: flex;
     justify-content: center;
     align-items: center;

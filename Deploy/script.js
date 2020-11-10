@@ -78,7 +78,7 @@ function startQuiz() {
     shuffledQuestions = questions.sort(() => 0.5 - Math.random());
     currentQuestionsIndex = 0
     questionContainerEl.classList.remove("hide")
-console.log(shuffledQuestions[0]);
+    console.log(shuffledQuestions[0]);
 
     setNextQuestion()
 
@@ -99,38 +99,42 @@ console.log(shuffledQuestions[0]);
     }, 1000);
     }
 
+    setTime();
+
+
     function sendMessage() {
         timeEl.textContent = " ";
-        var finalScore = document.querySelector(".finalScore");
-        finalScore.classList.remove("hide");
-        questionContainerEl.classList.add("hide")
-        document.querySelector("#submit").classList.remove("hide")
-        document.querySelector("#submit").addEventListener("click", displayNextButtons)
-        
+        finalScore ()
+    }
+    function finalScore(){
+        document.querySelector(".finalScore").classList.remove("hide");
+        var p = document.createElement("p");
+        p.innerText = "Your final score is: " + secondsLeft;
+        document.querySelector(".finalScoreEl").appendChild(p);
+        questionContainerEl.classList.add("hide");
+        document.querySelector("#header").classList.add("hide");
+        document.querySelector("#submit").classList.remove("hide");
+        document.querySelector("#submit").addEventListener("click", displayNextButtons);
     }
 
     function displayNextButtons (){
-        var intialsInput = document.querySelector("#initials")
-        localStorage.setItem("initials", initialsInput);
-        document.querySelector("#clear").addEventListener("click", clear)
-
+      
     }
+}
 
    
 
-    setTime();
 
     
-    answerBtnEl.addEventListener("click", function(event) {
-        event.stopPropagation();
-        currentQuestionsIndex++
-        if (answerBtnEl.click) {
-            setNextQuestion ()
-            console.log("clicked answer");
-        }
-        
-    })
-}
+answerBtnEl.addEventListener("click", function(event) {
+    event.stopPropagation();
+    currentQuestionsIndex++
+    if (answerBtnEl.click) {
+        setNextQuestion ()
+        console.log("clicked answer");
+    }  
+})
+
 
 
 function setNextQuestion() {

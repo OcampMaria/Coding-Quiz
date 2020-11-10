@@ -13,7 +13,7 @@
 
 <body>
     <!-- Created a header div to create a bar that contains the title and the countdown time -->
-    <header >
+    <header id="header">
         <ul>
             <li>View Highscores</li>
             <li class="time">Time: </li>
@@ -65,23 +65,23 @@
         </div>
 
         <section class="controls">
-            <button id="startBtn" class= "start-btn-btn btn">Start</button> 
+            <button id="startButton" class="startBtn" class= "start-btn-btn btn">Start</button> 
         </section>
 
     </main>
     <section class="finalScore hide"> 
-        <h2>All Done!</h2> 
-        <p>Your final score is: </p>
+        <div class="finalScoreEl">
+            <h2>All Done!</h2> 
+        </div>
         <form action="/action_page.php" id="initials">
             <label for="fname">Enter Initials:</label>
             <input type="text" id="fname" name="fname" value="">
         </form>
         <section class="finalScore2">
-            <button id="submit" class="hide" >
+            <button id="submit" class="hide">
                 <a class="nav-link disabled" href="index2.html">Submit Quiz</a>
             </button>
         </section>
-    
     </section>
    
 
