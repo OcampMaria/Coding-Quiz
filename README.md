@@ -12,11 +12,11 @@ When completing this application, some of the challenges that appeared included 
 </p>
 
 <p>
-By working on this application, I learned  
+By working on this application, I learned how to work with functions to create a quiz application. It gave me a better understanding of which situations functions are necessary and why we use them. 
 </p>
 
 ## Installation
-<p> The application code can be found in [Github](https://github.com/OcampMaria/PasswordGenerator), and the link to the published application can be accessed on the following link: (https://ocampmaria.github.io/PasswordGenerator/). 
+<p> The application code can be found in [Github](https://github.com/OcampMaria/Coding-Quiz), and the link to the published application can be accessed on the following link: ( https://ocampmaria.github.io/Coding-Quiz/). 
 </p>
 
 This is a preview of how the Web application Looks Like: 
