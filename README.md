@@ -22,7 +22,7 @@ By working on this application, I learned
 This is a preview of how the Web application Looks Like: 
 
 
-![password generator demo](./Assets/03-javascript-homework-demo.png)
+![password generator demo](./Assets/04-web-apis-homework-demo.gif)
 
 
 ## Usage
