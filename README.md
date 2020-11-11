@@ -1,14 +1,14 @@
 # Coding-Quiz
 <p> 
-
+This application is meant as a studying tool in which we built a timed coding quiz with multiple-choice questions. This application runs in the browser and features dynamically updated HTML and CSS powered by JavaScript code.
 </p>
 
 <p>
-Visual Studio Code was used to add html, JavaScript, and css code to complete the application. JavaScript was important in the development of the application. Once the code was completed the application was published using Github Pages. 
+Visual Studio Code was used to add Html, JavaScript, and CSS code to complete the application. JavaScript was essential in the development of the application since this is what creates a responsive user interface. Once the code was completed, the application was published using Github Pages. 
 </p>
 
 <p>
-When completing this application, some of the challenges that appeared included, 
+When completing this application, some of the challenges that appeared included not successfully saving the user initials into the local storage. I understand the concept, but I am not sure what code I should fix to save the local storage information. Moreover, I also had timing difficulties. The project took more time than expected to be finished. I asked for help, and I was able to finally finish the required step to being able to complete my project. 
 </p>
 
 <p>
@@ -16,7 +16,7 @@ By working on this application, I learned
 </p>
 
 ## Installation
-<p> The application code can be found in [Github](https://github.com/OcampMaria/PasswordGenerator) and the link to the published application can be accessed on the following link: (https://ocampmaria.github.io/PasswordGenerator/). 
+<p> The application code can be found in [Github](https://github.com/OcampMaria/PasswordGenerator), and the link to the published application can be accessed on the following link: (https://ocampmaria.github.io/PasswordGenerator/). 
 </p>
 
 This is a preview of how the Web application Looks Like: 
@@ -28,8 +28,9 @@ This is a preview of how the Web application Looks Like:
 ## Usage
 <p>
 The application can be accessed through the GitHub pages link or the direct web link.
-Once on the web application, the user can click on the "Generate Password". When clicking on the button, the user will be prompted to select the criteria they would like their password to contain. After this, the screen will generate and return a random password. 
+Once on the web application, the user can click on the "Generate Password." When clicking on the button, the user will be prompted to select the criteria they would like their password to contain. After this, the screen will generate and return a random password. 
 </p>
+
 
 ## Credits
 [w3schools](https://www.w3schools.com/html/)
