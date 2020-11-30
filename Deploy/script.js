@@ -118,10 +118,22 @@ function startQuiz() {
             localStorage.setItem(".initials", inputinitials.value)
 
             highscore = localStorage.getItem(".initials");
-           console.log(highscore, "helo");
+            console.log(highscore, "helo");
+
+           
            
         })    
     }
+
+      
+answerBtnEl.addEventListener("click", function(event) {
+    event.stopPropagation();
+    currentQuestionsIndex++
+    if (answerBtnEl.click) {
+        setNextQuestion ()
+        console.log("clicked answer");
+    }  
+})
 
 
 
