@@ -1,5 +1,5 @@
 var timeEl = document.querySelector(".time");
-var startButton = document.querySelector(".controls");
+var startButton = document.querySelector("#startButton");
 var questionContainerEl = document.querySelector("#questionContainer");
 var questionEl = document.querySelector("#question");
 var answerBtnEl = document.querySelector("#answer-buttons");
@@ -61,15 +61,15 @@ var questions = [
             {text: "4. The # sign", correct: false},
         ]
     }  
-]
+];
 
 
 
 
 
 // added an event listener to the start quiz button to run the function when clicked. 
-startButton.addEventListener("click", startQuiz)
 
+$("#startButton").click(startQuiz);
 
 
 function startQuiz() {
@@ -83,29 +83,27 @@ function startQuiz() {
     setNextQuestion()
 
     // starting time number. Timer will coundown starting at 75
-    var secondsLeft = 37;
+    var secondsLeft = 3;
     //created the function to create the countdown timer
     function setTime() {
         var timerInterval = setInterval(function() {
             secondsLeft--;
             timeEl.textContent = "Time: " + secondsLeft;
 
+            // when timer reaches 0, then call the finalScore function
             if (secondsLeft === 0) {
                 clearInterval(timerInterval);
-            
-                sendMessage()
+                timeEl.textContent = " ";
+
+                finalScore ()
             }
             
     }, 1000);
     }
-
     setTime();
 
-
-    function sendMessage() {
-        timeEl.textContent = " ";
-        finalScore ()
-    }
+    
+    // displays the finals score
     function finalScore(){
         document.querySelector(".finalScore").classList.remove("hide");
         var p = document.createElement("p");
@@ -114,26 +112,16 @@ function startQuiz() {
         questionContainerEl.classList.add("hide");
         document.querySelector("#header").classList.add("hide");
         document.querySelector("#submit").classList.remove("hide");
-        document.querySelector("#submit").addEventListener("click", displayNextButtons);
+
+        $("#submit").click(function () {
+            var inputinitials = document.querySelector(".initials");
+            localStorage.setItem(".initials", inputinitials.value)
+
+            highscore = localStorage.getItem(".initials");
+           console.log(highscore, "helo");
+           
+        })    
     }
-
-    function displayNextButtons (){
-      
-    }
-}
-
-   
-
-
-    
-answerBtnEl.addEventListener("click", function(event) {
-    event.stopPropagation();
-    currentQuestionsIndex++
-    if (answerBtnEl.click) {
-        setNextQuestion ()
-        console.log("clicked answer");
-    }  
-})
 
 
 
@@ -189,4 +177,5 @@ function setStatusClass(element, correct) {
 function clearStatusClass (element) {
     correctAns.classList.add("hide")
     correctAns.classList.add("hide")
+}
 }

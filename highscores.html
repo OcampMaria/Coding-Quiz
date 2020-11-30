@@ -3,15 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="Deploy/style.css">
-    <link rel="stylesheet" href="index.html">
+    <title>High Scores</title>
+    <!-- style sheet css -->
+    <link rel="stylesheet" href="./Deploy/style.css">
+    <link href="highscores.html">
 </head>
 <body>
     <!-- this is the results section -->
  
     <section id="results" class="finalScore">
         <h2>Highscores</h2>
+        <div class="initialscore" id="initialscore">
+        </div>
         <button id="clear">Clear Highscores</button>
         <button id="goBack">
             <a class="nav-link disabled" href="index.html">Go Back</a>
@@ -21,11 +24,10 @@
 
    
 
-        <!-- this is the submit button -->
-        
+   
 
        
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="./Deploy/script.js"></script>
 </body>
 </html>

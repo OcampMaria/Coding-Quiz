@@ -109,3 +109,7 @@ p {
     font-size: 20px;
     margin: 15px;
 }
+
+.initialscore{
+    background-color: rgb(191, 191, 219);
+}
